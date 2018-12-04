@@ -5,6 +5,8 @@ CXXFLAGS = -Wall -Wconversion -std=c++14 -O0 -g -pg
 LDFLAGS =
 LDLIBS =
 
+CXX = mpicxx
+
 OBJECTS = main.o Aresta.o Vertice.o LeArquivo.o Grafo.o Prim.o
 
 # first, try to compile from this project

@@ -72,9 +72,16 @@ void Grafo::adicionaAresta(Aresta* aresta) {
     this->matrizAdjacencia[aresta->getVertice2()->getId()][aresta->getVertice1()->getId()] = aresta;
     this->vertices[aresta->getVertice1()->getId()] = aresta->getVertice1();
     this->vertices[aresta->getVertice2()->getId()] = aresta->getVertice2();
-    aresta->getVertice1()->inverteValorInserido();
-    aresta->getVertice2()->inverteValorInserido();
-    aresta->inverteValorInserido();
+    
+    if(!(aresta->getVertice1()->estaInserido())) {
+        aresta->getVertice1()->inverteValorInserido();
+    }
+    if(!(aresta->getVertice2()->estaInserido())) {
+        aresta->getVertice2()->inverteValorInserido();
+    }
+    if(!(aresta->estaInserida())) {
+        aresta->inverteValorInserido();
+    }
 }
 
 
@@ -100,4 +107,8 @@ void Grafo::imprimeGrafo() {
         cout << endl;
     }
     cout << endl;
+}
+
+Aresta*** Grafo::getMatriz(){
+    return this->matrizAdjacencia;
 }

@@ -16,10 +16,12 @@ Prim::Prim(Grafo* g, Vertice* v) {
 
 }
 
+Prim::~Prim() {
+    delete[] this->arvore;
+    delete[] this->grafo;
+}
+
 void Prim::adicionaAresta(Aresta* aresta) {
-    if(aresta->estaInserida()) {
-        cout << "inserida" << endl;
-    }
     this->arvore->adicionaAresta(aresta);
 }
 

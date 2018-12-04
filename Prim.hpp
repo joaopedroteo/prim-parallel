@@ -11,7 +11,7 @@ private:
     Grafo* grafo;
 public:
     Prim(Grafo* g, Vertice* v);
-    // ~Prim();
+    ~Prim();
     void imprimeArvore();
     void adicionaAresta(Aresta* aresta);
 };

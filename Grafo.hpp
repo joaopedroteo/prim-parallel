@@ -26,6 +26,8 @@ public:
     void adicionaAresta(Aresta* aresta);
 
     void imprimeGrafo();
+
+    Aresta*** getMatriz();
 };
 
 #endif
